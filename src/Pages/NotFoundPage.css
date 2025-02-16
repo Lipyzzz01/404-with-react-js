@@ -1,0 +1,262 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css?family=Audiowide&display=swap");
+
+/* Pastikan aturan berikut hanya berlaku untuk halaman 404 */
+.not-found-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animasi hue-rotate hanya untuk SVG dalam halaman 404 */
+.not-found-page #svgWrap_1,
+.not-found-page #svgWrap_2 {
+  animation: hueRotate 6s ease-in-out 3s infinite;
+}
+
+/* Efek neon untuk SVG versi 1 */
+.not-found-page #id1_1,
+.not-found-page #id2_1,
+.not-found-page #id3_1 {
+  stroke: #ff005d;
+  stroke-width: 3px;
+  fill: transparent;
+  filter: url(#glow);
+}
+
+.not-found-page #id3_1 {
+  stroke-dasharray: 940px;
+  stroke-dashoffset: -940px;
+  animation:
+    drawLine3 2.5s ease-in-out 0s forwards,
+    flicker3 4s linear 4s infinite;
+}
+
+.not-found-page #id2_1 {
+  stroke-dasharray: 735px;
+  stroke-dashoffset: -735px;
+  animation:
+    drawLine2 2.5s ease-in-out 0.5s forwards,
+    flicker2 4s linear 4.5s infinite;
+}
+
+.not-found-page #id1_1 {
+  stroke-dasharray: 940px;
+  stroke-dashoffset: -940px;
+  animation:
+    drawLine1 2.5s ease-in-out 1s forwards,
+    flicker1 4s linear 5s infinite;
+}
+
+/* Efek untuk SVG versi 2 */
+.not-found-page #id1_2,
+.not-found-page #id2_2,
+.not-found-page #id3_2 {
+  stroke: #12000a;
+  stroke-width: 3px;
+  fill: transparent;
+  filter: url(#glow);
+}
+
+/* Keyframes untuk menggambar garis */
+@keyframes drawLine1 {
+  0% {
+    stroke-dashoffset: -940px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes drawLine2 {
+  0% {
+    stroke-dashoffset: -735px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes drawLine3 {
+  0% {
+    stroke-dashoffset: -940px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+/* Keyframes untuk efek flicker pada SVG */
+@keyframes flicker1 {
+  0% {
+    stroke: #ff005d;
+  }
+  1% {
+    stroke: transparent;
+  }
+  3% {
+    stroke: transparent;
+  }
+  4% {
+    stroke: #ff005d;
+  }
+  6% {
+    stroke: #ff005d;
+  }
+  7% {
+    stroke: transparent;
+  }
+  13% {
+    stroke: transparent;
+  }
+  14% {
+    stroke: #ff005d;
+  }
+  100% {
+    stroke: #ff005d;
+  }
+}
+
+@keyframes flicker2 {
+  0% {
+    stroke: #ff005d;
+  }
+  50% {
+    stroke: #ff005d;
+  }
+  51% {
+    stroke: transparent;
+  }
+  61% {
+    stroke: transparent;
+  }
+  62% {
+    stroke: #ff005d;
+  }
+  100% {
+    stroke: #ff005d;
+  }
+}
+
+@keyframes flicker3 {
+  0% {
+    stroke: #ff005d;
+  }
+  1% {
+    stroke: transparent;
+  }
+  10% {
+    stroke: transparent;
+  }
+  11% {
+    stroke: #ff005d;
+  }
+  40% {
+    stroke: #ff005d;
+  }
+  41% {
+    stroke: transparent;
+  }
+  45% {
+    stroke: transparent;
+  }
+  46% {
+    stroke: #ff005d;
+  }
+  100% {
+    stroke: #ff005d;
+  }
+}
+
+/* Efek neon dan flicker khusus untuk teks "Page Not Found" */
+.not-found-text {
+  font-family: "Audiowide", cursive;
+  animation:
+    fadeInText 3s ease-in 3.5s forwards,
+    flicker4 5s linear 7.5s infinite,
+    hueRotate 6s ease-in-out 3s infinite;
+}
+
+/* Keyframes untuk efek fade in teks */
+@keyframes fadeInText {
+  1% {
+    color: #12000a;
+    text-shadow: 0px 0px 4px #12000a;
+  }
+  70% {
+    color: #ff005d;
+    text-shadow: 0px 0px 14px #ff005d;
+  }
+  100% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+}
+
+/* Keyframes untuk efek flicker teks */
+@keyframes flicker4 {
+  0% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  30% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  31% {
+    color: #12000a;
+    text-shadow: 0px 0px 4px #12000a;
+  }
+  32% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  36% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  37% {
+    color: #12000a;
+    text-shadow: 0px 0px 4px #12000a;
+  }
+  41% {
+    color: #12000a;
+    text-shadow: 0px 0px 4px #12000a;
+  }
+  42% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  85% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  86% {
+    color: #12000a;
+    text-shadow: 0px 0px 4px #12000a;
+  }
+  95% {
+    color: #12000a;
+    text-shadow: 0px 0px 4px #12000a;
+  }
+  96% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+  100% {
+    color: #ff005d;
+    text-shadow: 0px 0px 4px #ff005d;
+  }
+}
+
+/* Keyframes untuk hue-rotate */
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(-120deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
