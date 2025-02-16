@@ -6,7 +6,7 @@ const RegisterPage = () => {
   return (
     <AuthLayouts title="Register">
       <FormRegister />
-      <p className="font-medium text-slate-700 font-bold">
+      <p className="text-slate-700 font-bold">
         Sudah punya akun?{" "}
         <Link to="/login" className="text-blue-700 font-bold">
           Login sekarang
